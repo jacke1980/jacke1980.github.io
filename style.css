@@ -1,0 +1,332 @@
+/*set color variables*/
+:root {
+  --primary-color: #eef2f4;
+  --color-white: #fff;
+  --color-white-ext: rgb(241, 234, 234);
+  --color-black-ext: #212b50;
+}
+/*set margin and box sizing*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+h1 {
+  font-size: 1.2rem;
+}
+.h1 {
+  text-align: center;
+  padding: 1rem 0;
+}
+/*build our navigation bar*/
+.navbar {
+  padding: 0;
+}
+.menu {
+  background-color: var(--color-black-ext);
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.logo {
+  font-size: 1.5rem;
+  color: var(--color-white);
+}
+
+.menu ul {
+  list-style: none;
+  display: inline-flex;
+}
+.menu ul li {
+  margin: 0;
+  padding: 2px 2px;
+  position: relative;
+}
+.menu ul li a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: all 0.5s;
+}
+.menu ul li a:hover {
+  color: var(--color-white-ext);
+}
+.menu .fa-caret-down {
+  margin: 0 10px;
+}
+
+.menu ul li:hover .sub-menu {
+  display: none;
+  position: absolute;
+  margin-top: 20px;
+  left: -10px;
+  top: 100%;
+  background-color: var(--color-black-ext);
+}
+
+.sub-menu ul {
+  display: block;
+  margin: 10px;
+}
+.sub-menu ul li {
+  width: 120px;
+  padding: 10px 0;
+}
+.sub-menu {
+  display: none;
+}
+/*styling our main page*/
+.container {
+  margin: 1rem;
+  padding: 0 2rem;
+
+  border: 5px solid rgb(191, 191, 228);
+}
+
+.Fig1,
+.Fig2,
+.Fig3,
+.Fig4 {
+  width: 100%;
+}
+.image-grid {
+  display: block;
+  justify-content: center;
+}
+.summary {
+  display: block;
+}
+
+.visualization-page {
+  display: none;
+}
+.comparison {
+  background-color: #e0e5f8;
+  margin: 3rem;
+  border: 5px solid rgb(191, 191, 228);
+  display: block;
+}
+.img {
+  box-shadow: 1px 1px 5px rgb(218, 214, 214);
+  background-color: var(--color-white);
+  padding: 1rem;
+  gap: 3rem;
+  display: block;
+  align-items: center;
+}
+
+.comparison .h1
+ {
+  font-size: 1.5rem;
+  margin: 1rem 2rem;
+}
+.container p {
+  margin: 2rem;
+  font-size: 1rem;
+}
+.comparison p,
+.data-page p {
+  padding: 1rem 1rem;
+  font-size: 1rem;
+}
+.data-page .h1{
+font-size: 1.5rem;
+margin: 1rem 4rem;
+}
+.data-page p{
+text-align: center;
+}
+.comparison {
+  margin: 0.5rem;
+  display: block;
+}
+.img {
+  margin: 0.5rem;
+}
+/*constr our data table*/
+.data-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 1rem;
+  font-size: 0.6rem;
+  min-width: 100px;
+  border-radius: 2px 2px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 10px var(--color-black-ext);
+}
+thead tr {
+  font-weight: bold;
+  background-color: #009879;
+  color: var(--color-white);
+  text-align: left;
+}
+.content-table th,
+.content-table td {
+  padding: 0.1rem;
+  padding-bottom: 0.3rem;
+}
+.content-table tbody tr {
+  border-bottom: 1px solid var(--color-white-ext);
+}
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #e0ebf1;
+}
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+/*adjust website for screens larger than 678px*/
+/*our code before this will be for screens smaller than 678px*/
+@media (min-width: 678px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .h1 {
+    text-align: justify;
+    padding: 1.5rem 0;
+  }
+  .menu ul li {
+    margin: 0.5rem;
+    padding: 10px 10px;
+    position: relative;
+  }
+  .menu ul li a {
+    font-size: 1rem;
+  }
+
+  .menu ul li:hover .sub-menu {
+    display: block;
+    position: absolute;
+    margin-top: 1px;
+    left: -10px;
+    top: 100%;
+    background-color: var(--color-black-ext);
+  }
+
+  .summary p {
+    font-size: 1.2rem;
+  }
+  .comparison p,
+  .data-page p {
+    font-size: 1.2rem;
+    margin:0;
+  }
+  .logo {
+    font-size: 2rem;
+    margin-left: 2rem;
+  }
+  .Fig1,
+  .Fig2,
+  .Fig3,
+  .Fig4 {
+    width: 300px;
+  }
+  .summary .Fig1 {
+    margin-right: 1rem;
+    width: 400px;
+    float: left;
+  }
+  .landing-page {
+    float: 50%;
+    display: flex;
+  }
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .container {
+    margin: 2rem;
+    padding: 1rem;
+  }
+
+  .visualization-div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .visualization-page {
+    margin: 3rem;
+    width: 100%;
+    display: inline-block;
+  }
+
+  .comparison {
+    margin: 3rem;
+    display: block;
+  }
+  .data-page p {
+    margin: 0 2rem;
+  }
+  .img {
+    display:flex;
+    box-shadow: 2px 1px 10px rgb(204, 203, 203);
+    margin: 1rem 2rem;
+    padding: 0;
+    height:auto;
+   
+    align-items: center;
+  }
+  .comparison .Fig1, 
+  .comparison .Fig2,
+  .comparison .Fig3,
+  .comparison .Fig4{
+    width: 600px;
+    margin-right: 0;
+  }
+  .img .Fig1, .img .Fig2,
+  .img .Fig3, .img .Fig4{
+float: left;
+  }
+  .data-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-table {
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.8rem;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px var(--color-black-ext);
+  }
+  thead tr {
+    font-weight: bold;
+    background-color: #009879;
+    color: var(--color-white);
+    text-align: left;
+  }
+  .content-table th,
+  .content-table td {
+    padding: 1rem;
+  }
+  .content-table tbody tr {
+    border-bottom: 1px solid var(--color-white-ext);
+  }
+  .content-table tbody tr:nth-of-type(even) {
+    background-color: #e0ebf1;
+  }
+  .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+}
